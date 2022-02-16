@@ -4,8 +4,8 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
-@Autononmous(name = "Auton_Right")
-public class Auton_Right_Manual extends Autononmous {
+@Autononmous(name = "Auton - Ducks + Warehouse")
+public class Auton_DW extends Autononmous {
 
 private DcMotor DRVFR;
 private DcMotor DRVFL;
@@ -30,23 +30,19 @@ private DcMotor Spinner;
       // Put run blocks here.
       while (opModeIsActive()) {
         for(int count = 0; count < 5; count++) {
-          DRVFL.setPower(1);
-          DRVRL.setPower(1);
-        }
-        for(int count = 0; count < 10; count++) {
-          DRVFL.setPower(1);
-          DRVRL.setPower(1);
-          DRVFR.setPower(1);
-          DRVRR.setPower(1);
+          DRVFL.setPower(-1);
+          DRVRL.setPower(-1);
+          DRVFR.setPower(-1);
+          DRVRR.setPower(-1);
         }
         for(int count = 0; count < 4; count++){
             Spinner.setPower(1);
           }
         for(int count = 0; count < 15; count++) {
-          DRVFL.setPower(-1);
-          DRVRL.setPower(-1);
-          DRVFR.setPower(-1);
-          DRVRR.setPower(-1);
+          DRVFL.setPower(1);
+          DRVRL.setPower(1);
+          DRVFR.setPower(1);
+          DRVRR.setPower(1);
         // Put loop blocks here.
         telemetry.update();
       }

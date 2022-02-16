@@ -7,17 +7,21 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 @Autononmous(name = "Auton_Left")
 public class Auton_Left_Manual extends Autononmous {
 
-  private DcMotor rightMotor;
-  private DcMotor leftMotor;
-  private DcMotor Spinner;
+private DcMotor DRVFR;
+private DcMotor DRVFL;
+private DcMotor DRVRR;
+private DcMotor DRVRL;
+private DcMotor Spinner;
 
   /**
    * This function is executed when this Op Mode is selected from the Driver Station.
    */
   @Override
   public void runOpMode() {
-    rightMotor = hardwareMap.get(DcMotor.class, "rightMotor");
-    leftMotor = hardwareMap.get(DcMotor.class, "leftMotor");
+    DRVFR = hardwareMap.get(DcMotor.class, "DRVFR");
+    DRVFL = hardwareMap.get(DcMotor.class, "DRVFL");
+    DRVRR = hardwareMap.get(DcMotor.class, "DRVRR");
+    DRVRL = hardwareMap.get(DcMotor.class, "DRVRL");
     Spinner = hardwareMap.get(DcMotor.class, "Spinner");
 
     // Put initialization blocks here.
@@ -26,18 +30,23 @@ public class Auton_Left_Manual extends Autononmous {
       // Put run blocks here.
       while (opModeIsActive()) {
         for(int count = 0; count < 5; count++) {
-          leftMotor.setPower(1);
+          DRVFR.setPower(1);
+          DRVRR.setPower(1);
         }
         for(int count = 0; count < 10; count++) {
-          rightMotor.setPower(1);
-          leftMotor.setPower(1);
+          DRVFL.setPower(1);
+          DRVRL.setPower(1);
+          DRVFR.setPower(1);
+          DRVRR.setPower(1);
         }
         for(int count = 0; count < 4; count++){
             Spinner.setPower(1);
           }
         for(int count = 0; count < 15; count++) {
-          rightMotor.setPower(-1);
-          leftMotor.setPower(-1);
+          DRVFL.setPower(-1);
+          DRVRL.setPower(-1);
+          DRVFR.setPower(-1);
+          DRVRR.setPower(-1);
         // Put loop blocks here.
         telemetry.update();
       }

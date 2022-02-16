@@ -1,5 +1,6 @@
 # SSHS FIRST Robotics 2021-2022 Team A Code
-## `LegacyUC.java`
-`LegacyUC.java` is our legacy user control, configured for 2WD. Even though we’ve initialized a claw and lift, our bot, at the time of using the code, was not built with a claw or lift in mind. Thus, those variables are just sitting there undeclared. The `UserControl.java` file is built with a lift in mind. The code is very simple and built with two aspects in mind: a 2WD and a spinner. Our spinner worked spectacularly.
-## `LegacyAuton.java`
-This is our legacy autonomous program. It is a very *very* simple piece of code. It iterates through a counter called `count` 15 times, going forward the entire time. This allows for us to go forward into the warehouse. We wrote this as a last-ditch attempt when we could not figure out how to use TensorFlow with our webcam. It literally took 5 minutes to write and test...
+## `UserControl.java`
+`UserControl.java` is our user control, configured for 4WD. At this point in time, our code is NOT factored for an intake system, something which we are configuring. We have a few legacy components include, commented out, in case we feel the need to reuse those components later on.
+## The Thing About Auton...
+While helping Team B code, I realized that we would need Auton for a variety of different scenarios. If the bot is on blue alliance, it will need to turn right to get to the duck spinner. If the bot is on red alliance, it will need to turn left to turn to the duck spinner. I then remember that we are allowed to place our robot in any orientation **<u>as long as it is touching the wall.</u>** I then made a third auton program labeled `Auton_DW.java` to account for that. The fourth and final scenario is if our alliance partner has a better auton strategy than we do. In that case, our bot will simply charge towards the warehouse and wait for the auton period to end.
+**Our auton, at this point in time, is sort of a rough draft. It works, *in theory*. We still need to verify whether it goes the appropriate distance and spins the carousel for the appropriate amount of time, things we cannot verify until we get access to the field.**
