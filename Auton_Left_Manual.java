@@ -4,8 +4,8 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
-@Autononmous(name = "Auton_Left")
-public class Auton_Left_Manual extends Autononmous {
+@Autonomous(name = "Auton_Left")
+public class Auton_Left_Manual extends LinearOpMode {
 
 private DcMotor DRVFR;
 private DcMotor DRVFL;
@@ -52,4 +52,5 @@ private DcMotor Spinner;
       }
     }
   }
+}
 }
