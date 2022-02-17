@@ -43,7 +43,8 @@ public void runOpMode()
         DRVRR.setPower(gamepad1.right_stick_y);
         DRVRL.setPower(-gamepad1.left_stick_y);
         
-        if(gamepad1.right_bumper)
+        // Spinner
+        if(gamepad1.left_trigger)
         {
             Spinner.setPower(1);
         }
@@ -56,19 +57,18 @@ public void runOpMode()
             Spinner.setPower(0);
         }
 
-        if (gamepad1.dpad_up){
+        // Lift
+
+        if (gamepad1.right_bumper){
             Lift.setPower(1);
         }
-        else if (gamepad1.dpad_down){
+        else if (gamepad1.right_trigger){
             Lift.setPower(-1);
             
         }
         else{
             Lift.setPower = 0;
         }
-
-
-
     }
 }
 }
