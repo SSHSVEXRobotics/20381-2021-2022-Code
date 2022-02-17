@@ -56,7 +56,7 @@ public void runOpMode()
             Spinner.setPower(0);
         }
 
-        if(gamepad1.dpad_up){
+        if (gamepad1.dpad_up){
             Lift.setPower(1);
         }
         else if (gamepad1.dpad_down){
